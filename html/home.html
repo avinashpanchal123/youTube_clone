@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <nav>
+        <div class="left_nav">
+           <button id="nav_btn">
+            <span class="material-icons">
+                menu
+                </span>                
+           </button>
+            <img src="https://th.bing.com/th/id/OIP.4JSI74QS_rWQ55Le7M_hKwHaGL?w=200&h=50&c=7&r=0&o=5&pid=1.7"
+                alt="">
+              
+        </div>
+        <div>
+          <input type="text" id="query" placeholder="Search" />
+        </div>
+        <div>
+            <button onclick="searchVideos()" id="search_btn">
+                <span class="material-icons">
+                    search
+                    </span>
+            </button>
+            <div class="mic_icon">
+                <span class="material-icons">
+                    mic_none
+                    </span>
+            </div>
+          
+        </div>
+    
+        <ul class="right_nav">
+            <li>
+                <span class="material-icons">
+                    video_call
+                    </span>
+            </li>
+            <li>
+                <span class="material-icons">
+                    apps_outage
+                    </span>                    
+            </li>
+            <li>
+                <span class="material-icons">
+                    notification_important
+                    </span>
+            </li>
+            <li>
+                <a href="">login</a>
+            </li>
+        </ul>
+    </nav>
+
+   <div class="main_container">
+    <div id="left_container">
+        <ul>
+            <li><span class="material-icons">home</span>
+                <br>
+                <a href="">Home</a>
+            </li>
+           <li class="left_margin"><i class="material-icons">explore</i>
+            <br>
+            <a href="">Explore</a>
+        </li>
+           <!-- <li><a href="">Explore</a></li> -->
+           <li>
+            <span class="material-icons">
+                subscriptions
+                </span>
+                <br>
+           </li>
+           <li><a href="">Subscriptions</a></li>
+           <li><span class="material-icons">
+            video_library
+            </span>
+            <br>
+            <a href="">Library</a>
+        
+        </li>
+          
+        </ul>
+   </div>
+
+   <div id="right_container">
+
+      <div id="videos_container">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+
+      </div>
+
+   </div>
+
+   </div>
+
+
+    
+</body>
+</html>
+<script src="/javascript/home.js"></script>
+

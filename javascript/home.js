@@ -4,7 +4,7 @@ let getData = async () => {
 
     
     try {
-        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=trending&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`)
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=coding&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`)
 
         let data = await res.json()
 
@@ -29,19 +29,37 @@ function appendVideos(videos) {
 
     videos_container.innerHTML = null;
 
-    videos.forEach(({ id: { videoId } }) => {
+    videos.forEach((el) => {
+        let videoId = el.id.videoId;
+        let title = el.snippet.title;
+        let channelTitle = el.snippet.channelTitle;
+        console.log(channelTitle);
 
+      let grid_items = document.createElement("div");
+      grid_items.classList.add("items")
 
-
-      let div = document.createElement("div");
-
+    //   let video_div = document.createElement("div");
+    //   video_div.classList.add("video_div");
+    //   grid_items.appendChild(video_div);
+    
       console.log(videoId);
 
-      div.innerHTML = `<iframe width="200" height="150" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+      grid_items.innerHTML = `<iframe width="265" height="180" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-      div.style.marginTop = "20px"
+      let discription = document.createElement("p");
+      discription.innerText = title;
+      grid_items.appendChild(discription)
 
-      videos_container.append(div)
+   
+
+      let channel_name = document.createElement("h4");
+      channel_name.textContent = channelTitle
+      
+
+      grid_items.appendChild(channel_name)
+
+   
+      videos_container.append(grid_items)
 
     });
 

@@ -1,19 +1,14 @@
-//GET https://youtube.googleapis.com/youtube/v3/search?location=India&q=popular%20videos&type=video&key=[YOUR_API_KEY] HTTP/1.1
-
-//https://youtube.googleapis.com/youtube/v3/search?maxResults=20&q=${query}&type=video&key
-
-
 
 
 let getData = async () => {
 
     
     try {
-        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?maxResults=20&q=popular%20videos&type=video&key=AIzaSyCXUjXRuJZ7uYBlGjAtuqFYUQz5ULz-CdY`)
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=trending&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`)
 
         let data = await res.json()
 
-        console.log(data.items.videoId);
+        console.log(data.items);
          appendVideos(data.items)
 
     }

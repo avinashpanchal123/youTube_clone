@@ -1,15 +1,16 @@
+// getting data from youTube api
 
-
-let getData = async () => {
+let getData = async (q) => {
 
     
     try {
-        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=coding&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`)
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${q}&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`)
 
         let data = await res.json()
 
         console.log(data.items);
-         appendVideos(data.items)
+        return (data.items)
+      
 
     }
 
@@ -17,13 +18,33 @@ let getData = async () => {
         console.log(err);
     }
 }
-
-getData()
-
-let videos_container = document.getElementById("videos_container");
+  
+ let videos_container = document.getElementById("videos_container");
 
 
+ // append data function for landing page videos and debouncing
 
+let appendData = (search_query, func) =>{
+
+    let resultArr = getData(search_query)
+    .then((res)=>{
+        func(res);
+    })
+
+    .catch((err)=>{
+        console.log(err);
+    })
+    
+}
+
+
+// appendData("coding", appendVideos)
+
+
+
+
+
+// append Videos function for appending videos on landing page
 
 function appendVideos(videos) {
 
@@ -38,9 +59,6 @@ function appendVideos(videos) {
       let grid_items = document.createElement("div");
       grid_items.classList.add("items")
 
-    //   let video_div = document.createElement("div");
-    //   video_div.classList.add("video_div");
-    //   grid_items.appendChild(video_div);
     
       console.log(videoId);
 
@@ -67,55 +85,45 @@ function appendVideos(videos) {
 }
 
 
- // going to sign in page 
-
- let login_btn = document.getElementById("login_btn");
-
- login_btn.onclick = () =>{
-     goToSignInPage()
- }
 
 
-//  function main(){
-//      let query = document.getElementById("query").value;
+let search_query = document.getElementById("search_query");
+
+let debounce_container = document.getElementById("debounce_container");
+
+
+// debouncing function for appending results of search queries
+
+let appendResults = (resArr)=>{
+    debounce_container.style.display = "block"
+    debounce_container.innerHTML = null;
+    resArr.forEach(el => {
+        let videoTitle = el.snippet.title;
+
+        let videoId = el.id.videoId;
+
+        let result_para = document.createElement("div");
+
+        result_para.onclick = ()=>{
+            goTovideos(videoTitle)
+        }
+
+        result_para.innerText = videoTitle;
+
+        result_para.classList.add("result_para")
+
+       
+
+        debounce_container.appendChild(result_para);
      
-//      searchVideo(query)
+
+    });
+}
 
 
-//  }
+let timer;
 
-// fetching the data according to the input
-
-searchVideos = async()=>{
-
-    let query = document.getElementById("query").value;
-
-    try{
-        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?maxResults=20&q=${query}&type=video&key=AIzaSyCXUjXRuJZ7uYBlGjAtuqFYUQz5ULz-CdY`)
-
-        let data = await res.json();
-
-        console.log(data);
-
-        appendVideos(data.items)
-    }
-
-    catch(err){
-          console.log(err);
-    }
-
- }
- 
-
-//   including debouncing in the search box
- let timer;
-
- let video_list_container = document.querySelector(".video_list_container");
-
-
- debounce = (func,delay)=>{
-
-     video_list_container.style.display = "block"
+let debounce = (func,delay)=>{
 
     clearTimeout(timer)
 
@@ -125,20 +133,42 @@ searchVideos = async()=>{
     
  }
 
- //adding event listener to the body for 
+ let getResults = ()=>{
+     let q = search_query.value;
+     appendData(q, appendResults)
+ }
 
- let body = document.querySelector("body");
 
+ 
+const trigger = ()=> debounce(getResults, 2000);
+
+
+
+function goTovideos(videoTitle){
+    console.log(videoTitle);
+}
+
+
+// handling the style of debouncing container
+
+let body = document.querySelector("body");
 
 body.onclick = ()=>{
-     let timeout = setTimeout(()=>{
+     let timer = setTimeout(()=>{
         gayab()
-     },1000)
+     },300)
  }
 
  gayab = ()=>{
-    video_list_container.style.display = "none"
+    debounce_container.style.display = "none"
+    search_query.value = " "
  }
 
- 
+
+
+ let search_btn = document.getElementById("search_btn");
+
+ search_btn.onclick = ()=>{
+     console.log(search_query.value);
+ }
 

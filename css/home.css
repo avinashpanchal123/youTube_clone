@@ -3,29 +3,44 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 body{
     position: relative;
 }
 
+.nav_container{
+    width: 100%;
+    display: flex;
+}
+.left_nav{
+    width: 5%;
+    height: 100vh;
+    border: 2px solid black;
+    position: fixed;
+    display: flex;
+    z-index: 20;
+    flex-direction: column;
+}
  /* navbar started */
 
 nav {
-    width: 100%;
+    width: 95%;
     height: 9vh;
     /* background-color: #0e0d0d; */
     display: flex;
     position: fixed;
     top: 0;
+    margin-left: 5%;
     background-color: white;
     
 }
 
 #menu{
-   height: 4.5vh;
+   height: 4.6vh;
    margin-top: 2vh;
-   width: 5.5%;
+   width: 100%;
 }
 
 #yt_logo{
@@ -46,6 +61,8 @@ nav {
     width: 85%;
     font-size: 0.9rem;
     letter-spacing: 0.0001rem;
+    outline: none;
+   
 }
 
 
@@ -88,6 +105,27 @@ nav {
    border: 2px solid black;
 }
 
+#debounce_container{
+    width: 40.5%;
+    height: 50vh;
+    position: absolute;
+    z-index: 20;
+    top: 6.6vh;
+    left: 18.6%;
+    border: 1px solid rebeccapurple;
+    background-color: white;
+    overflow-y: scroll;
+    display: none;
+}
+
+
+
+.result_para {
+    cursor: context-menu;
+    margin-bottom: 2vh;
+   
+}
+
 #videos_container{
     width: 95%;
     
@@ -105,13 +143,14 @@ nav {
 .items {
     border: 1px solid red;
    height: 45vh;
+    
 }
-
+/* 
 .items :hover {
-   
+    box-sizing: unset;
     z-index: 10;
-    transform: scale(1.2)
-  }
+    transform: scale(1.3, 1.5)
+  } */
 
 .video_div{
     width: 100%;

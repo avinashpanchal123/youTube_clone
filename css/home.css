@@ -108,7 +108,7 @@ nav {
 #debounce_container{
     width: 40.5%;
     height: 50vh;
-    position: absolute;
+    position: fixed;
     z-index: 20;
     top: 6.6vh;
     left: 18.6%;
@@ -128,7 +128,7 @@ nav {
 
 #videos_container{
     width: 95%;
-    
+    background-color: rgb(243, 242, 242);
     border: 2px solid black;
     margin-top: 9vh;
     margin-left: 5%;

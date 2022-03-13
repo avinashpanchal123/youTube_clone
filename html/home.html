@@ -2,29 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="https://www.youtube.com/s/desktop/6007d895/img/favicon.ico"
+      type="image/x-icon"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>You Tube</title>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../css/home.css" />
   </head>
   <body>
-    <div class="nav_container">
-  
+    <div id="nav_container"></div>
+
+    <div id="debounce_container"></div>
+
+    <div class="main_container">
+      <div>
+    
+    <div class="library_icon">
+      <svg
+      viewBox="0 0 24 24"
+      preserveAspectRatio="xMidYMid meet"
+      focusable="false"
+    
+      style="
+        pointer-events: none;
+        display: inline;
+        width: 50%;
+        height: 100%;"
+    >
+      <g>
+        <path fill="blue" d="M11,7l6,3.5L11,14V7L11,7z M18,20H4V6H3v15h15V20z M21,18H6V3h15V18z M7,17h13V4H7V17z"></path>
+      </g></svg>
+      
     </div>
 
-    <div id="debounce_container">
-
+    <div class="home_icon">
+      <svg viewBox="0 0 24 24"
+       preserveAspectRatio="xMidYMid meet"
+        focusable="false" 
+       style="pointer-events: none; display: inline; width: 50%; height: 100%;">
+       <g>
+         <path  d="M4,10V21h6V15h4v6h6V10L12,3Z"></path>
+      </g></svg>
     </div>
+    
 
-    <div id="videos_container">
-     
+      </div>
+      <div id="videos_container"></div>
     </div>
   </body>
 </html>
 <script type="module" src="../javascript/home.js"></script>
 
 <script type="module" src="../components/navscript.js"></script>
+
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+></script>

@@ -1,5 +1,5 @@
 
-import getData from "../javascript/home.js"
+import appendData from "../javascript/home.js"
 
 
 let search_query = document.getElementById("search_query");
@@ -41,7 +41,7 @@ let debounce = (func, delay) => {
 
 let getResults = () => {
   let q = search_query.value;
-  getData(q, appendResults)
+  appendData(q, appendResults);
 };
 
 let  trigger = () => {

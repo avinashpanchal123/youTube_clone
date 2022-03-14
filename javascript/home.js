@@ -1,43 +1,42 @@
 import Navbar from "../components/Navbar.js";
 
-let nav_container = document.getElementById("nav_container")
+let nav_container = document.querySelector('.nav_container');
 
 nav_container.innerHTML = Navbar();
 
 // getting data from youTube api
 
-let getData = async (q, func) => {
+let getData = async (q) => {
   try {
     let res = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=${q}&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${q}&key=AIzaSyA_uCt4o__GKdkAoQrfV3Mxo_ML19BnKOo`
     );
 
     let data = await res.json();
 
-     func(data.items)
+    console.log(data.items);
+    return data.items;
   } catch (err) {
     console.log(err);
   }
 };
 
-getData("coding", appendVideos)
-
 let videos_container = document.getElementById("videos_container");
 
 // append data function for landing page videos and debouncing
 
-// let appendData = (search_query, func) => {
-//   let resultArr = getData(search_query)
-//     .then((res) => {
-//       func(res);
-//     })
+let appendData = (search_query, func) => {
+  let resultArr = getData(search_query)
+    .then((res) => {
+      func(res);
+    })
 
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
-// appendData("coding", appendVideos);
+appendData("coding", appendVideos);
 
 // append Videos function for appending videos on landing page
 
@@ -71,5 +70,5 @@ function appendVideos(videos) {
 }
 
 
-export default getData;
 
+export default appendData

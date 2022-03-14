@@ -1,187 +1,149 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family:sans-serif;
+ 
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
 }
 
-body {
-  position: relative;
+body{
+    position: relative;
 }
 
-.nav_container {
-  width: 100%;
-  display: flex;
+.nav_container{
+    width: 100%;
+    display: flex;
 }
-
-/* navbar started */
+.left_nav{
+    width: 5%;
+    height: 100vh;
+    border: 2px solid black;
+    position: fixed;
+    display: flex;
+    z-index: 20;
+    flex-direction: column;
+}
+ /* navbar started */
 
 nav {
-  width: 100%;
-  height: 9vh;
-  /* background-color: #0e0d0d; */
-  display: flex;
-  position: fixed;
-  top: 0;
-  background-color: white;
-  /* border: 2px solid black; */
+    width: 95%;
+    height: 9vh;
+    /* background-color: #0e0d0d; */
+    display: flex;
+    position: fixed;
+    top: 0;
+    margin-left: 5%;
+    background-color: white;
+    
 }
 
-#menu {
-  height: 4.6vh;
-  margin-top: 2.3vh;
-  width: 5%;
-  text-align: center;
-  /* border: 1px solid rebeccapurple; */
+#menu{
+   height: 4.6vh;
+   margin-top: 2vh;
+   width: 100%;
 }
 
-ion-icon {
-  font-size: 1.5rem;
+#yt_logo{
+    width: 5rem;
 }
 
-#yt_logo {
-  width: 5rem;
-}
-
-.search_div {
-  width: 50%;
-}
-
-.search_div input {
-  border: 0.001rem solid rgb(197, 197, 197);
-  padding: 0.5rem 0.5rem;
-  border-right: none;
-  margin-top: 1vh;
-  margin-left: 15%;
-  width: 85%;
-  font-size: 0.9rem;
-  letter-spacing: 0.0001rem;
-  outline: none;
-}
-
-#search_btn {
-  width: 4rem;
-  height: 6vh;
-  margin-top: 1vh;
-  padding-left: 15%;
-  border: 0.001rem solid rgb(197, 197, 197);
-  text-align: center;
-  background-color: rgb(228, 226, 226);
-}
-
-#search_btn svg {
-  width: 10%;
-}
-
-#mic_div {
-  margin-top: 1vh;
-  width: 5%;
-  /* border: 1px solid black; */
-  padding-left: 1%;
-}
-
-#mic_div button {
-  border-radius: 1.3rem;
-  vertical-align: middle;
-  width: 2.1rem;
-  height: 2.1rem;
-  border: none;
-}
-
-#cube_set {
-  height: 7vh;
-  margin-top: 1vh;
-  width: 10%;
-  margin-left: 5%;
-  border: 2px solid black;
-}
-
-
-
-
-#sign_in_div{
-  width: 9%;
-  height: 7vh;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1vh;
-  border: 0.001rem solid #065FD4;
-  color: #065FD4;
-  cursor: pointer;
-  /* padding-top: 1vh; */
-}
-
-#sign_in_div div:nth-child(1){
-  width: 20%;
-  margin-top: 1vh;
-}
-
-#sign_in_div div:nth-child(2){
-  margin-top: 1.5vh;
-  font-weight: 200;
-}
-
-
-#debounce_container {
-  width: 42.5%;
-  height: 50vh;
-  position: fixed;
-  z-index: 20;
-  top: 6.6vh;
-  left: 19%;
-  border: 1px solid rebeccapurple;
-  background-color: white;
-  overflow-y: scroll;
-  display: none;
-}
-.main_container{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.main_container div:nth-child(1){
-  width: 5%;
+.search_div{
+    width: 50%;
   
 }
 
-.library_icon{
-  width: 100%;
-  height: 8vh;
-  background-color: wheat;
-  position: fixed;
-  top: 20vh;
-  padding-left: 1%;
-}
-.home_icon{
-  position: fixed;
-  height: 8vh;
-  background-color: wheat;
-  width: 5%;
-  padding-left: 1%;
-  top: 10vh;
-}
-.result_para {
-  cursor: context-menu;
-  margin-bottom: 2vh;
+.search_div input{
+    border: 0.001rem solid  rgb(197, 197, 197);
+    padding: 0.5rem 0.5rem;
+    border-right: none;
+    margin-top: 1vh;
+    margin-left: 15%;
+    width: 85%;
+    font-size: 0.9rem;
+    letter-spacing: 0.0001rem;
+    outline: none;
+   
 }
 
-#videos_container {
-  width: 95%;
-  background-color: rgb(243, 242, 242);
-  border: 2px solid black;
-  margin-top: 9vh;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(4, 23.5%);
-  gap: 1rem;
-  padding-left: 1.5%;
-  padding-top: 3vh;
+
+#search_btn{
+   width: 4rem;
+   height: 6vh;
+   margin-top: 1vh;
+   padding-left: 15%;
+   border: 0.001rem solid  rgb(197, 197, 197);
+   text-align: center;
+   background-color:  rgb(228, 226, 226);;
+  
+}
+
+#search_btn svg{
+    width: 10%;
+}
+
+#mic_div{
+    margin-top: 1vh;
+    width: 5%;
+   /* border: 1px solid black; */
+   padding-left: 1%;
+}
+
+#mic_div button{
+    border-radius: 1.3rem;
+     vertical-align: middle;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: none;
+}
+
+
+#cube_set{
+    height: 7vh;
+   margin-top: 1vh;
+   width: 10%;
+   margin-left: 5%;
+   border: 2px solid black;
+}
+
+#debounce_container{
+    width: 40.5%;
+    height: 50vh;
+    position: fixed;
+    z-index: 20;
+    top: 6.6vh;
+    left: 18.6%;
+    border: 1px solid rebeccapurple;
+    background-color: white;
+    overflow-y: scroll;
+    display: none;
+}
+
+
+
+.result_para {
+    cursor: context-menu;
+    margin-bottom: 2vh;
+   
+}
+
+#videos_container{
+    width: 95%;
+    background-color: rgb(243, 242, 242);
+    border: 2px solid black;
+    margin-top: 9vh;
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 23.5%);
+    gap: 1rem;
+    padding-left: 1.5%;
+    padding-top: 3vh;
+   
 }
 
 .items {
-  border: 1px solid red;
-  height: 45vh;
+    border: 1px solid red;
+   height: 45vh;
+    
 }
 /* 
 .items :hover {
@@ -190,58 +152,23 @@ ion-icon {
     transform: scale(1.3, 1.5)
   } */
 
-.video_div {
-  width: 100%;
-  height: 80%;
-  background-color: aqua;
-}
-
-.channel_avatar {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 1rem;
-  background-color: black;
-}
-
-.channel_name {
-  width: 70%;
+.video_div{
+    width: 100%;
+    height: 80%;
+    background-color: aqua;
 }
 
 
 
+.channel_avatar{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: black;
 
-
-
-
-
-@media only screen and (max-width: 900px) {
-  .search_div{
-    width: 40%;
-  }
-  #cube_set{
-   display: none;
-  }
-  #mic_div{
-    display: none;
-  }
-  #sign_in_div{
-    margin-left: 5%;
-    width: 15%;
-  }
 
 }
 
-@media only screen and (max-width: 600px) {
- 
-  .main_container div:nth-child(1){
-    display: none;
-  }
-  #debounce_container{
-    left: 22.5%;
-  }
-  #videos_container {
-  
-    grid-template-columns: repeat(1, 10%);
-    gap: 1rem;
-  }
+.channel_name{
+    width: 70%;
 }
